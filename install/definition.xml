@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================ ソルバーの基本情報 ============================================= -->
+<SolverDefinition 
+    name="Withgridid_test" 
+    caption="Withgridid test" 
+    version="1.0.24111301" 
+    copyright="Keita Hoshino" 
+    release="2024.11.13" 
+    homepage="" 
+    executable="withgridid_test.exe" 
+    iterationtype="time" 
+    gridtype="structured2d">
+
+    <!-- ============================================
+     計算条件の定義
+    ============================================= -->
+    <CalculationCondition>
+
+        <Tab name = "setting" caption = "setting">
+
+            <Item name="k_size" caption="Number of vertical divisions">
+                <Definition valueType="integer" default="0" />
+            </Item>
+
+            <Item name="time_step" caption="time step of output(sec)">
+                <Definition valueType="real" default="1" min="0.01" />
+            </Item>
+
+            <Item name="time_end" caption="End time of calculation(sec)">
+                <Definition valueType="real" default="100" min="0.01" />
+            </Item>
+
+            <Item name="period" caption="Period of value change">
+                <Definition valueType="real" default="50" min="0" />
+            </Item>
+
+        </Tab>
+
+    </CalculationCondition>
+
+    <!-- ============================================
+     格子属性の定義
+    ============================================= -->
+    <GridRelatedCondition>
+        <Item name="elevation_bottom" caption="Bottom Elevation(m)">
+            <Definition position="node" valueType="real" default="max" />
+        </Item>
+        <Item name="elevation_top" caption="Top Elevation(m)">
+            <Definition position="node" valueType="real" default="max" />
+        </Item>
+    </GridRelatedCondition>
+
+</SolverDefinition>
